@@ -1,0 +1,69 @@
+# =============================================
+# 语言与基础风格配置
+# =============================================
+Language: Cpp
+BasedOnStyle: LLVM         # 继承 LLVM 主要规则
+# Standard:   Cpp17          # 默认符合 C++17 规范
+
+# =============================================
+# 缩进与对齐
+# =============================================
+AccessModifierOffset: -4    # C#风格访问修饰符缩进层级
+IndentWidth:      4         # 4空格缩进 
+TabWidth:         4         # Tab等同4空格
+UseTab:           Never     # 强制使用空格 
+ContinuationIndentWidth: 4  # 续行缩进 (保持与主缩进一致)
+
+# =============================================
+# 大括号与括号风格 (Allman核心规则)
+# =============================================
+BreakBeforeBraces: Custom   # 完全自定义大括号换行
+BraceWrapping:              
+  AfterClass:      true     # 类后换行
+  AfterStruct:     true     # 结构体后换行
+  AfterUnion:      true     # 联合体后换行
+  AfterEnum:       true     # 枚举后换行
+  AfterFunction:   true     # 函数后换行
+  AfterControlStatement: true # if/for后换行
+  AfterNamespace:  false    # 命名空间内不换行
+  BeforeElse:      true     # else前换行 
+  IndentBraces:    false    # 括号自身不缩进
+
+AlignAfterOpenBracket: AlwaysBreak   # 长表达式换行对齐
+AlignEscapedNewlines:  Right         # \换行对齐到行尾
+AlignConsecutiveAssignments: true    # 对齐连续赋值
+AlignOperands:   Align               # 二元操作符对齐
+
+# =============================================
+# 空格规则
+# =============================================
+SpaceBeforeParens: ControlStatements # if/for后加空格
+SpaceInEmptyParentheses:   false     # 空括号内无空格
+SpacesInAngles:            false     # 泛型无空格 vector<int>
+SpacesInSquareBrackets:    false     # 数组无空格 arr[0]
+PointerAlignment:          Left      # Type* ptr (左对齐星号)
+DerivePointerAlignment:    false     # 禁用自动推导
+
+# =============================================
+# 换行与截断规则
+# =============================================
+ColumnLimit:        120      # 
+BinPackArguments:   false   # 函数参数不合并到一行
+BinPackParameters:  false   # 函数声明参数不合并
+AllowAllParametersOfDeclarationOnNextLine: true  # 允许多行参数列表
+
+# =============================================
+# 函数与代码块风格
+# =============================================
+AllowShortFunctionsOnASingleLine: InlineOnly  # 仅类内短函数单行
+AllowShortIfStatementsOnASingleLine: Never    # 禁用单行if
+# AllowShortLoopsOnASingleLine:      Never     # 禁用单行循环
+BreakBeforeBinaryOperators: NonAssignment     # 运算符前换行 (如&&)
+
+# =============================================
+# 注释与其他
+# =============================================
+ReflowComments:           true    # 自动重排注释文本
+SpacesBeforeTrailingComments: 1   # 尾注前空格数
+SortIncludes:             false   # 不自动排序#include
+FixNamespaceComments:     true    # 修复命名空间注释
